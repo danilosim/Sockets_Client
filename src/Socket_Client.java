@@ -78,9 +78,7 @@ public class Socket_Client {
         try {
             do {
                 st = bufferDeEntrada.readUTF();
-                System.out.println(st);
                 System.out.println("\nServidor => " + st);
-                System.out.print("\nCliente => ");
             } while (!st.equals(COMANDO_TERMINACION));
         } catch (IOException ignored) {
         }
@@ -90,7 +88,6 @@ public class Socket_Client {
     private void escribirDatos() {
         String entrada;
         while (true) {
-            System.out.print("Cliente => ");
             entrada = teclado.nextLine();
             if(!entrada.isEmpty()){
                 enviar(entrada);
